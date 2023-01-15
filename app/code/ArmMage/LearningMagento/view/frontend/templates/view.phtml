@@ -1,0 +1,14 @@
+<?php /** @var ArmMage\LearningMagento\Block\Article $block */ ?>
+<?php $armBlogItems = $block->getCollection(); ?>
+<?php if (count($armBlogItems)) { ?>
+    <h2><?= $block->escapeHtml(__('Arm Blog')) ?></h2>
+    <?php foreach ($armBlogItems as $post): ?>
+        <h3><?= $block->escapeHtml(__('Entity - ')) ?>
+            <a href="<?php echo $block->getArticleUrl($post->getId()); ?>"><?= $post->getTitle(); ?></a>
+        </h3>
+        <h4><?= date('F j, Y', strtotime($post->getCreatedAt())); ?></h4>
+        <h4><?= date('F j, Y', strtotime($post->getUpdatedAt())); ?></h4>
+        <p><strong><?= $block->escapeHtml(__('Description - ')) ?></strong><?= $post->getDescription(); ?></p>
+        <p><strong><?= $block->escapeHtml(__('Status - ')) ?></strong><?= $post->getStatus(); ?></p>
+    <?php endforeach; ?>
+<?php } ?>
