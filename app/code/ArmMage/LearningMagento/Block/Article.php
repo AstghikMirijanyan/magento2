@@ -41,7 +41,7 @@ class Article extends Template
         $viewCollection->addFieldToSelect('*')->load();
         return $viewCollection->getItems();
     }
-
+// test comment in github
     /**
      * For a given post, returns its url
      * @param Post $post
