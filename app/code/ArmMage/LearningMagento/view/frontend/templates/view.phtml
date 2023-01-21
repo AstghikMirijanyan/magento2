@@ -1,4 +1,14 @@
 <?php /** @var ArmMage\LearningMagento\Block\Article $block */ ?>
+
+<?php
+$helper = $this->helper('ArmMage\LearningMagento\Helper\Data');
+
+if ($helper->isLoggedIn() && $helper->isArmBecomeAuthor()) {
+    ?>
+    <button id="click_me"><?= __('Create Blog'); ?></button>
+    <?php
+}?>
+
 <?php $armBlogItems = $block->getCollection(); ?>
 <?php if (count($armBlogItems)) { ?>
     <h2><?= $block->escapeHtml(__('Arm Blog')) ?></h2>

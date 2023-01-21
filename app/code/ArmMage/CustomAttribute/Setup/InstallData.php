@@ -8,7 +8,7 @@ use Magento\Eav\Setup\EavSetup;
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
-
+use Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface;
 class InstallData implements InstallDataInterface
 {
     private $eavSetup;
@@ -35,11 +35,17 @@ class InstallData implements InstallDataInterface
                 'source' => 'ArmMage\CustomAttribute\Model\Config\Customer\Extensionoption',
                 'required' => false,
                 'sort_order' => 30,
-                'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
+                'global' => ScopedAttributeInterface::SCOPE_GLOBAL,
                 'used_in_product_listing' => true,
                 'backend' => 'Magento\Eav\Model\Entity\Attribute\Backend\ArrayBackend',
                 'visible_on_front' => true,
-                'visible' => true
+                'visible' => true,
+                'user_defined' => true,
+                'position' => 10,
+                'system' => 0,
+                'is_used_in_grid' => true,
+                'is_visible_in_grid' => true,
+                'is_html_allowed_on_front' => true,
             ]
         );
         $customAttribute = $this->eavConfig->getAttribute(Customer::ENTITY, self::CUSTOM_ATTRIBUTE_ARM);
