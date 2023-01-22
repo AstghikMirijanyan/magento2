@@ -4,8 +4,9 @@ namespace ArmMage\LearningMagento\Controller\Index;
 
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\App\ObjectManager;
+use Magento\Framework\App\Action\Action;
 
-class Create extends \Magento\Framework\App\Action\Action
+class Create extends Action
 {
     /**
      * Blog create action

@@ -8,13 +8,14 @@ use Magento\Framework\Setup\ModuleContextInterface;
 
 class UpgradeSchema implements UpgradeSchemaInterface
 {
+    private const TABLE_NAME = 'arm_blog';
     public function upgrade( SchemaSetupInterface $setup, ModuleContextInterface $context ) {
         $installer = $setup;
 
         $installer->startSetup();
 
         if(version_compare($context->getVersion(), '1.1.0', '<')) {
-            if (!$installer->tableExists('arm_blog')) {
+            if (!$installer->tableExists(self::TABLE_NAME)) {
                 $table = $installer->getConnection()->newTable(
                     $installer->getTable('arm_blog')
                 )

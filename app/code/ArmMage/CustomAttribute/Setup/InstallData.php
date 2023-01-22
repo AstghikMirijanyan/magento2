@@ -9,6 +9,7 @@ use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface;
+
 class InstallData implements InstallDataInterface
 {
     private $eavSetup;
@@ -19,7 +20,6 @@ class InstallData implements InstallDataInterface
         $this->eavSetup = $eavSetup;
         $this->eavConfig = $eavConfig;
     }
-
 
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
@@ -55,7 +55,6 @@ class InstallData implements InstallDataInterface
         );
         $customAttribute->save();
         $setup->endSetup();
-
     }
 }
 

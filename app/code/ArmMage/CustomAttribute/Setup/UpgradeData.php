@@ -26,8 +26,9 @@ class UpgradeData implements UpgradeDataInterface
 
     public function upgrade(
         ModuleDataSetupInterface $setup,
-        ModuleContextInterface $context
-    ) {
+        ModuleContextInterface   $context
+    )
+    {
         if (version_compare($context->getVersion(), "1.0.1", "<")) {
             $setup->startSetup();
             $this->eavSetup->addAttribute(

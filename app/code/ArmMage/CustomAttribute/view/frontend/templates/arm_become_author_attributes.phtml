@@ -2,15 +2,17 @@
 $armBecomeAuthor = $block->getCustomer()->getCustomAttribute('arm_become_author');
 $customerArmBecomeAuthor = $armBecomeAuthor ? $armBecomeAuthor->getValue() : null;
 ?>
-<fieldset class="fieldset edit account" >
+<fieldset class="fieldset edit account">
     <legend class="legend">
-        <span><?=$block->escapeHtmlAttr(__('Become an Author'))?></span>
+        <span><?= $block->escapeHtmlAttr(__('Become an Author')) ?></span>
     </legend>
     <br>
     <div class="field arm_become_author">
-        <label for="arm_become_author" class="label"><span><?=$block->escapeHtmlAttr(__('Become an Author'));?></span></label>
+        <label for="arm_become_author" class="label"><span><?= $block->escapeHtmlAttr(__('Become an Author')); ?></span></label>
         <div class="control">
-            <input id="arm_become_author" class="input-text" name="arm_become_author" value="<?=$block->escapeHtmlAttr($customerArmBecomeAuthor);?>" title="<?=$block->escapeHtmlAttr(__('Become an Author'));?>" type="text" autocomplete="off" />
+            <input id="arm_become_author" class="input-text" name="arm_become_author"
+                   value="<?= $block->escapeHtmlAttr($customerArmBecomeAuthor); ?>"
+                   title="<?= $block->escapeHtmlAttr(__('Become an Author')); ?>" type="text" autocomplete="off"/>
         </div>
     </div>
 </fieldset>

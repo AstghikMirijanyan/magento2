@@ -1,13 +1,14 @@
-
 <?xml version="1.0"?>
-
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="customer_account"/>
     <body>
         <referenceContainer name="form.additional.info">
-            <block class="Magento\Customer\Block\Form\Edit" name="customer_edit" template="ArmMage_CustomAttribute::arm_become_author_attributes.phtml" cacheable="false">
+            <block class="Magento\Customer\Block\Form\Edit" name="customer_edit"
+                   template="ArmMage_CustomAttribute::arm_become_author_attributes.phtml" cacheable="false">
                 <container name="form.additional.info" as="form_additional_info"/>
-                <block class="Magento\Customer\Block\Form\Edit" name="arm_become_author" template="ArmMage_CustomAttribute::arm_become_author_attributes.phtml"/>
+                <block class="Magento\Customer\Block\Form\Edit" name="arm_become_author"
+                       template="ArmMage_CustomAttribute::arm_become_author_attributes.phtml"/>
             </block>
         </referenceContainer>
     </body>

@@ -15,13 +15,13 @@ class Index implements HttpGetActionInterface
     /**
      * @param PageFactory $resultPageFactory
      */
-    public function __construct(PageFactory $resultPageFactory) {
+    public function __construct(PageFactory $resultPageFactory)
+    {
         $this->resultPageFactory = $resultPageFactory;
     }
 
     /**
      * Prints the information
-     * @return Page
      */
     public function execute()
     {

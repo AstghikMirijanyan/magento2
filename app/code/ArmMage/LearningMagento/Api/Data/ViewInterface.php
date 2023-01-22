@@ -1,9 +1,9 @@
 <?php
-namespace ArmMage\LearningMagento\Api\Data;
 
+namespace ArmMage\LearningMagento\Api\Data;
 interface ViewInterface
 {
-    /**#@+
+    /**
      * Constants for keys of data array. Identical to the name of the getter in snake case
      */
     const ENTITY_ID = 'entity_id';

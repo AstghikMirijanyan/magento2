@@ -32,7 +32,7 @@ class Article extends Template
     }
 
     /**
-     * @return Post[]
+     * @return Create[]
      */
     public function getCollection()
     {
@@ -41,10 +41,8 @@ class Article extends Template
         $viewCollection->addFieldToSelect('*')->load();
         return $viewCollection->getItems();
     }
-// test comment in github
     /**
-     * For a given post, returns its url
-     * @param Post $post
+     * @param Create $post
      * @return string
      */
     public function getArticleUrl($viewId)
