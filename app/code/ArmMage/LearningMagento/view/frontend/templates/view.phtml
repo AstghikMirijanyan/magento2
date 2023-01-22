@@ -8,7 +8,7 @@ if ($helper->isLoggedIn()) {
     <a href="/blog/index/create" id="click_me"><?= __('Create Blog'); ?></a>
     <?php
 } ?>
-
+<p><?= $block->getCurrentDate() ?></p>
 <?php $armBlogItems = $block->getCollection(); ?>
 <?php if (count($armBlogItems)) { ?>
     <h2><?= $block->escapeHtml(__('Arm Blog')) ?></h2>
