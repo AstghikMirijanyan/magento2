@@ -3,9 +3,9 @@
 <?php
 $helper = $this->helper('ArmMage\LearningMagento\Helper\Data');
 
-if ($helper->isLoggedIn() && $helper->isArmBecomeAuthor()) {
+if ($helper->isLoggedIn()) {
     ?>
-    <button id="click_me"><?= __('Create Blog'); ?></button>
+    <a href="/blog/index/create" id="click_me"><?= __('Create Blog'); ?></a>
     <?php
 }?>
 
