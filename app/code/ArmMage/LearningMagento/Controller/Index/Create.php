@@ -3,6 +3,7 @@
 namespace ArmMage\LearningMagento\Controller\Index;
 
 use Magento\Framework\Controller\ResultFactory;
+use Magento\Framework\App\ObjectManager;
 
 class Create extends \Magento\Framework\App\Action\Action
 {
@@ -14,18 +15,24 @@ class Create extends \Magento\Framework\App\Action\Action
     public function execute()
     {
         $post = (array)$this->getRequest()->getPost();
-
         if (!empty($post)) {
             $title = $post['title'];
             $description = $post['description'];
             $status = $post['status'];
-            $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-            $model = $objectManager->create('ArmMage\LearningMagento\Model\ResourceModel\View');
-
-            $this->messageManager->addSuccessMessage('Blog created !');
+            $objectManager = ObjectManager::getInstance();
+            $model = $objectManager->create('ArmMage\LearningMagento\Model\View');
+            $model->addData([
+                "title" => $title,
+                "description" => $description,
+                "status" => $status,
+            ]);
+            if ($model->save()) {
+                $this->messageManager->addSuccessMessage('Blog created !');
+            } else {
+                $this->messageManager->addErrorMessage('Can\'t save!');
+            }
             $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
             $resultRedirect->setUrl('/blog/');
-
             return $resultRedirect;
         }
         $this->_view->loadLayout();
